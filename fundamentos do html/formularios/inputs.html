@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title>Formulários do HTML</title>
+</head>
+<body>
+  <h1>Inputs do html</h1>
+
+  <form>
+    <!-- campo de texto -->
+    <label for="nome">Nome:</label>
+    <input type="text" id ="nome" name="nome" required>
+    <br>
+
+    <!-- Campo de e-mail -->
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <!-- Campo de senha -->
+    <label for="senha">Senha: </label>
+    <input type="text" id="senha" name="senha" required>
+
+    <br>
+
+    <!-- campo de seleção -->
+    <label for="">Genero</label> <br>
+    <input type="radio" name="genero" id="masculino" value="m"> 
+    <label for="masculino">Masculino</label>
+    <input type="radio" name="genero" id="Feminino" value="f"> 
+    <label for="Feminino">Feminino</label>
+<br>
+    <!-- campo de checkbox -->
+    <label>Interesses</label> <br>
+    <input type="checkbox" id="backend" value="backend" name="interesses"> 
+    <label for="backend">backend</label>
+    <input type="checkbox" id="frontend" value="frontend" name="interesses">
+    <label for="frontend">Frontend</label>
+    <input type="checkbox" id="mobile" value="mobile" name="interesses">
+    <label for="mobile">mobile</label>
+
+<br>
+    <!-- Campo de data -->
+    <label for="dataDeNascimento">Data de nascimento</label>
+    <input type="date" id="dataDeNascimento" name="nascimento"> <br>
+   
+
+    <!-- Campo de arquivo (upload de arquivos) -->
+    <label for="fotoPerfil">Foto de Perfil:</label>
+    <input type="file" id="fotoPerfil" name="fotoPerfil">
+    <br><br>
+
+    <button type = "submit">submit</button>
+
+  </form>
+</body>
+</html>
