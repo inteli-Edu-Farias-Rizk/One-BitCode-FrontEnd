@@ -8,7 +8,7 @@
   <form>
     <!-- campo de texto -->
     <label for="nome">Nome:</label>
-    <input type="text" id ="nome" name="nome" required>
+    <input type="text" id ="nome" name="nome" required placeholder="ex: Eduardo Rizk">
     <br>
 
     <!-- Campo de e-mail -->
@@ -30,7 +30,7 @@
 <br>
     <!-- campo de checkbox -->
     <label>Interesses</label> <br>
-    <input type="checkbox" id="backend" value="backend" name="interesses"> 
+     <input type="checkbox" id="backend" value="backend" name="interesses">  <!-- value vai ser o valor mandado para o backend -->
     <label for="backend">backend</label>
     <input type="checkbox" id="frontend" value="frontend" name="interesses">
     <label for="frontend">Frontend</label>
@@ -48,6 +48,21 @@
     <input type="file" id="fotoPerfil" name="fotoPerfil">
     <br><br>
 
+    <!-- campo de seleção -->
+    <label for="situacao">Situacao Atual</label>
+    <select name="situacao" id="situacao">
+      <option value="" disabled selected>Selecione uma das opções</option>
+      <option value="estudante">Estudando para se tornar um programador</option>
+      <option value="estagiario">trabalando como estagiário</option>
+      <option value="pleno">Estudando para se tornar um programador</option>
+    </select>
+    <br>
+    <!-- Campo de area de texto de múltiplas linhas -->
+    <label for="sobre">Sobre mim: </label>
+    <textarea name="sobre" id="sobre" cols="30" rows="2" placeholder="Só escreva alguma coisa"></textarea> <!-- não pode colocar nada dentro das tags nem um espaço  -->
+    
+    
+    
     <button type = "submit">submit</button>
 
   </form>
