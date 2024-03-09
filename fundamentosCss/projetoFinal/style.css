@@ -1,0 +1,165 @@
+/* Estilos globais: Aplica estilos básicos a todos os elementos da página */
+* {
+    box-sizing: border-box; /* Faz com que a largura e altura dos elementos incluam padding e borda */
+    font-family: "Oxygen", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Define a família de fontes padrão */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+}
+
+/* Variáveis de cores definidas para serem usadas em toda a página */
+:root {
+    --color-background: #030207; /* Cor de fundo geral da página */
+    --color-white: #fff; /* Cor branca para texto e outros elementos */
+    --color-blue: #1474b4; /* Cor azul, principalmente usada para links */
+}
+
+/* Estilos do corpo da página */
+body {
+    background-color: var(--color-background); /* Usa a cor de fundo definida nas variáveis */
+    color: var(--color-white); /* Define a cor do texto para branco */
+}
+
+/* Estilos para links */
+a {
+    color: var(--color-blue); /* Define a cor dos links */
+}
+
+/* Estilos para a seção principal (hero) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--color-background)); /* Gradiente sobre a cor de fundo */
+    position: relative;
+    min-height: 100vh; /* Altura mínima de 100% da altura da viewport */
+}
+
+.hero__background {
+    object-fit: cover; /* Garante que a imagem de fundo cubra o espaço disponível */
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -10; /* Coloca a imagem de fundo atrás do conteúdo */
+}
+
+.hero__foreground {
+    color: var(--color-white); /* Cor do texto na seção hero */
+    padding-top: 40vh; /* Espaçamento superior, empurrando o conteúdo para baixo */
+    text-align: center; /* Centraliza o texto */
+}
+
+.hero__title {
+    font-size: 5rem; /* Tamanho grande para o título */
+    font-weight: 300; /* Peso da fonte mais leve */
+}
+
+.hero__text {
+    margin-top: 2rem; /* Espaço acima do texto */
+    letter-spacing: 0.5rem; /* Espaçamento entre letras */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+}
+
+/* Estilos para seções genéricas */
+.section {
+    overflow: hidden; /* Previne o vazamento de conteúdo */
+    padding: 0 8rem; /* Padding horizontal */
+    text-align: center; /* Texto centralizado */
+}
+
+.section__title {
+    font-size: 3rem; /* Tamanho do título da seção */
+    font-weight: 300; /* Peso da fonte */
+    margin: 4rem auto; /* Margem vertical automática para centralização */
+}
+
+/* Estilos para imagens e textos nas seções */
+.section__img,
+.section__img-inline {
+    border-radius: .75rem; /* Bordas arredondadas para as imagens */
+    box-shadow: 0 1rem 2rem -0.5rem rgba(20, 116, 180, 0.25); /* Sombra ao redor das imagens */
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+    max-height: 30rem;
+    width: 100%;
+}
+
+.section__text,
+.section__text-inline {
+    font-size: 1.25rem; /* Tamanho do texto */
+    line-height: 1.75; /* Altura da linha do texto */
+    margin: 4rem auto; /* Margem para espaçamento */
+}
+
+/* Estilos específicos para imagens e texto alinhados */
+.section__img-inline {
+    border-top-left-radius: 4rem; /* Raio da borda superior esquerda */
+    border-bottom-right-radius: 4rem; /* Raio da borda inferior direita */
+    float: left; /* Flutua a imagem à esquerda */
+    margin-right: 4rem; /* Margem à direita da imagem */
+    margin-bottom: 2rem; /* Margem abaixo da imagem */
+    height: 25rem;
+    width: 20rem;
+}
+
+.section__text-inline {
+    margin-top: 6rem; /* Margem superior para o texto */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.section__text-inline > p {
+    margin-top: 1.5rem; /* Margem superior para parágrafos dentro do texto */
+}
+
+/* Estilos para imagens na seção hangouts */
+#hangouts img {
+    object-position: center; /* Centraliza o objeto (imagem) */
+}
+
+/* Estilos para a galeria de imagens */
+.gallery__img {
+    border-radius: .75rem; /* Bordas arredondadas para as imagens da galeria */
+    height: 16rem;
+    width: 16rem;
+    object-fit: cover; /* Assegura que a imagem preencha o espaço */
+    transform: rotate(-2deg); /* Rotação leve da imagem */
+}
+
+.gallery__img-wrapper {
+    display: inline-block; /* Exibe imagens em linha */
+    position: relative; /* Posicionamento relativo para posicionamento absoluto dos pseudoelementos */
+}
+
+/* Margem entre as imagens da galeria */
+.gallery__img-wrapper + .gallery__img-wrapper {
+    margin-left: 3rem; /* Margem à esquerda */
+    margin-top: 3rem; /* Margem superior */
+}
+
+/* Alternância na rotação das imagens da galeria */
+.gallery__img-wrapper:nth-child(even) > .gallery__img {
+    top: 1rem; /* Posiciona a imagem */
+    transform: rotate(2deg); /* Rotação oposta para imagens alternadas */
+}
+
+/* Pseudoelemento para efeito visual nas imagens da galeria */
+.gallery__img-wrapper::after {
+    content: ""; /* Conteúdo vazio para o pseudoelemento */
+    background-color: rgb(228, 26, 26); /* Cor de fundo do marcador */
+    border-radius: 999px; /* Raio da borda para criar um círculo */
+    height: 1.25rem; /* Altura do pseudoelemento */
+    width: 1.25rem; /* Largura do pseudoelemento */
+    position: absolute; /* Posicionamento absoluto */
+    top: 0.25rem; /* Posição superior */
+    right: 1rem; /* Posição à direita */
+}
+
+/* Posicionamento alternativo para pseudoelementos em imagens alternadas */
+.gallery__img-wrapper:nth-child(even)::after {
+    left: 1rem; /* Posição à esquerda para pseudoelementos alternados */
+}
+
+/* Estilos para o rodapé */
+footer {
+    margin-top: 4rem; /* Espaço acima do rodapé */
+    padding: 2rem; /* Padding interno do rodapé */
+    text-align: center; /* Centraliza o conteúdo do rodapé */
+}
