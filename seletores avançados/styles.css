@@ -1,0 +1,35 @@
+/* seletor :nth-child() */
+
+/* vai pegando os valores pares */
+li:nth-child(2n){
+    background-color: black;
+    color: white;
+    width: fit-content;
+}
+/* pega o segundo valor */
+li:nth-child(2){
+    background-color: rgb(233, 22, 22);
+    color: white;
+    width: fit-content;
+}
+/* vai pegar os valores impares*/
+li:nth-child(2n-1){
+    background-color: rgb(22, 22, 233);
+    color: white;
+    width: fit-content;
+}
+/* Quando passar o mouse por cima vai ter um relevo com essa cor */
+li:hover{
+    background-color: cadetblue;
+    color: rgb(255, 255, 255);
+
+}
+input:focus{
+    background-color: red;
+}
+li::before{
+    content:"(antes)"
+}
+li:not(:first-child){
+    color: royalblue;
+}

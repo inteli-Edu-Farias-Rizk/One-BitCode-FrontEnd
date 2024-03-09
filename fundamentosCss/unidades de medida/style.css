@@ -1,0 +1,58 @@
+*{
+/*Quando está com zero pode ignorar a unidade de medida*/
+    padding: 0;
+    margin: 0;
+    
+}
+
+section{
+    height: 75px;
+}
+header{
+    /* unidade de media absoluta isso não é muito bom */
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.box{
+    border: 1px solid #232323;
+    margin-top: 10px;
+    width: 75px;
+    display: inline-block;
+}  
+.px{
+    height: 10px;
+}
+/* root element, trás como referencia a própia font --> 16px */
+.rem{
+    height: 2.5rem;
+}
+/* vai aumentando relativo ao tamanho da font */
+.em{
+    font-size: 32px;
+    height: 2em;
+}
+
+
+/* Vai pegar o elemento PAI, que no caso é o section, e vai pegar a aultura relativa a ele */
+.prcnt-33 {
+    height: 33%;
+}
+
+.prcnt-66 {
+    height: 66%;
+}
+
+.prcnt-100 {
+    height: 100%;
+}
+
+/* viewport height se ajusta ao tamanho da area de visualização*/
+.vh {
+    height: 30vh;
+}
+
+/* viewport width se ajusta a largura da area de visualização */
+.vw {
+    width: 50vw;
+}

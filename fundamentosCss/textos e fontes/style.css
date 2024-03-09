@@ -1,0 +1,23 @@
+/* Usar o google fonts para olhar as fontes de palavras */
+
+header{
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+h1{
+    /* tem o peso que é a expessura da fonte, e a fanily que é o tipo da fonte */
+    font-family:cursive;
+    font-weight: 300;
+}
+h2{
+    font-size: 16px;
+    letter-spacing: 8px;
+}
+
+.bold{
+    font-weight: bold;
+}
+.italic{
+    font-style: italic;
+}

@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+h1{
+    padding: 32px;
+    margin: 32px;
+}
+li {
+    background-color: #1c1a1d;
+    border: 4px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 32px;
+    height: 250px;
+    width: 400px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+p{
+    padding: 5px;
+    
+}
+.selected{
+    border: 4px solid #f1c40f;
+    background-color: #342734;
+}
+.hidden{
+    display: none;
+}

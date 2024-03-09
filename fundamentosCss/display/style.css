@@ -1,0 +1,11 @@
+.inline{
+    display:inline; /* Elementos ficam com o minimo da largura, só aceita margem e preenchimento horizontal, não quebra de linha */
+}
+.block{
+    display:block; /* Elementos ficam com a largura total da linha, aceita margem e preenchimento horizontal e vertical, quebra de      linha */    
+}
+.block-inline{
+    display:inline-block; /* Elementos ficam com a largura do conteudo, aceita margem e preenchimento horizontal e vertical, não quebra de linha */
+    padding-left: 10px;
+    margin-top: 10px;
+}
