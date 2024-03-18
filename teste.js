@@ -1,3 +1,5 @@
-for(let i = 1; i <=10; i++){
-    console.log(i);
-}
+const subtrair = function (a, b) {
+    return a - b
+  }
+subtrair(36, 13)
+console.log(subtrair)
