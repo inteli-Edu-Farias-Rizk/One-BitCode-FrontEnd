@@ -1,59 +1,79 @@
-const newTec = document.getElementById('newTecnology')
 
-newTec.addEventListener('click', function(ev){
-    //vai prevenir o comportamento padrão
+function createLabel(text, htmlFor) {
+    const label = document.createElement('label');
+    label.htmlFor = htmlFor; // Corrected property name to htmlFor
+    label.innerText = text;
+    return label;
+}
+
+function createInput(id, value, name, type = 'text') {
+    const input = document.createElement('input');
+    input.value = value;
+    input.id = id;
+    input.name = name;
+    input.type = type;
+    return input;
+}
+const sub = document.getElementById('sub')
+const form = document.getElementById("newTechnology"); // Corrected to match HTML
+const newTecBtn = document.getElementById('addTecBtn'); // Use this to attach event listener
+const stackInputs = document.getElementById('newInputs'); // Corrected ID to match HTML
+let inputRows = 0;
+
+newTecBtn.addEventListener('click', function(ev) { // Corrected variable name
     ev.preventDefault();
-    const form = document.getElementById('newsInputs');
-    const ul = document.createElement('ul');
-    const nomeTec = document.createElement('li');
-    nomeTec.innerText = 'Nome da Tec: ';
-    
-    const inputNomeTec = document.createElement('input');
-    inputNomeTec.id = 'nomeDaTec';
-    inputNomeTec.type = 'text';
-    nomeTec.append(inputNomeTec);
-    ul.append(nomeTec);
-    
-    // Adicionando um formulário do tipo radio
-    const xp = document.createElement('li');
-    xp.innerText = 'Anos de Xp: ';
+    const newRow = document.createElement('li');
+    const rowIndex = inputRows++;
+    newRow.id = 'row-' + rowIndex;
+    newRow.className = 'inputRow'
 
-    const inputXp1 = document.createElement('input');
-    inputXp1.type = 'radio';
-    inputXp1.id = 'xp1'; // ID atualizado para ser único
-    inputXp1.name = 'xpRange'; // Adicionado nome para agrupar os radios
-    inputXp1.value = '0-2';
+    const techNameLabel = createLabel('Nome:', 'techName-' + rowIndex);
+    const techNameInput = createInput('techName-' + rowIndex, '', 'techName');
 
-    const labelXp1 = document.createElement('label');
-    labelXp1.setAttribute('for', 'xp1');
-    labelXp1.innerText = '0-2';
+    const expLabel = createLabel('Experiência:', '');
 
-    const inputXp2 = document.createElement('input');
-    inputXp2.type = 'radio';
-    inputXp2.id = 'xp2'; // ID atualizado para ser único
-    inputXp2.name = 'xpRange'; // Mesmo nome para agrupar
-    inputXp2.value = '3-4';
+    const expRadio1 = createInput('expRadio-' + rowIndex + '-1', '0-2', 'techExp-' + rowIndex, 'radio');
+    const expLabel1 = createLabel('0-2 anos', 'expRadio-' + rowIndex + '-1');
 
-    const labelXp2 = document.createElement('label');
-    labelXp2.setAttribute('for', 'xp2');
-    labelXp2.innerText = '3-4';
+    const expRadio2 = createInput('expRadio-' + rowIndex + '-2', '3-4', 'techExp-' + rowIndex, 'radio');
+    const expLabel2 = createLabel('3-4 anos', 'expRadio-' + rowIndex + '-2');
 
-    const inputXp3 = document.createElement('input');
-    inputXp3.type = 'radio';
-    inputXp3.id = 'xp3'; // ID atualizado para ser único
-    inputXp3.name = 'xpRange'; // Mesmo nome para agrupar
-    inputXp3.value = '5+';
+    const expRadio3 = createInput('expRadio-' + rowIndex + '-3', '5+', 'techExp-' + rowIndex, 'radio');
+    const expLabel3 = createLabel('5+ anos', 'expRadio-' + rowIndex + '-3');
 
-    const labelXp3 = document.createElement('label');
-    labelXp3.setAttribute('for', 'xp3');
-    labelXp3.innerText = '5+';
-    
-    // Append os inputs e labels ao item da lista
-    xp.append(inputXp1, labelXp1, inputXp2, labelXp2, inputXp3, labelXp3);
-    ul.append(xp);
+    const removeRowBtn = document.createElement('button')
+    removeRowBtn.type = 'button'
+    removeRowBtn.innerText = 'Remover'
+    removeRowBtn.addEventListener('click',function(){
+        stackInputs.removeChild(newRow)
+    })
 
-    const remove = document.createElement('button')
-    
+    newRow.append(techNameLabel, techNameInput, expLabel, expRadio1, expLabel1, expRadio2, expLabel2, expRadio3, expLabel3,removeRowBtn);
 
-    form.append(ul);
+    stackInputs.appendChild(newRow); // Changed from append to appendChild for consistency
 });
+let developers = []
+sub.addEventListener('click',function(ev){
+    ev.preventDefault();
+    const fullnameInput = document.getElementById('name')
+    //vai criar uma node list com todos os inputRows que tem o className como inputRow
+    const inputRows = document.querySelectorAll('.inputRow')
+    let technologies = []
+    inputRows.forEach(function(row){ 
+        const techName = document.querySelector('#' + row.id + ' input[name="techName"]').value
+        const techExp = document.querySelector('#'+ row.id + ' input[type="radio"]:checked').value
+        technologies.push({name: techName, exp: techExp})
+    })
+    const newDev = { fullname: fullnameInput.value, technologies: technologies }
+    developers.push(newDev)
+    alert('Dev cadastrado com sucesso!')
+
+    fullnameInput.value = ''
+    inputRows.forEach(function(row){
+        row.remove()
+    })
+
+    
+    console.log(developers)
+})
+

@@ -7,12 +7,13 @@
 </head>
 <body>
     <h1>Cadastro de Devs</h1>
-    <form id="newTecnology">
+    <form id="newTechnology"> <!-- Corrected ID to match JavaScript -->
         <label for="name">Nome: </label>
         <input type="text" id="name" name="name">
-        <button>Nova tecnologia</button>
+        <button id="addTecBtn" type="button">Nova tecnologia</button> <!-- Added type="button" to prevent form submission -->
     </form>
-    <form id='newsInputs'></form>
+    <ul id="newInputs"></ul> <!-- Corrected ID to match JavaScript -->
+    <button id="sub" type="button">Submit</button> <!-- Optionally, can be included inside the form -->
     <script src="index.js"></script>
 </body>
 </html>
