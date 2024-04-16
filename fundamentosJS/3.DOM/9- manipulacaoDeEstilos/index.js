@@ -12,7 +12,7 @@ function DarkTheme(){
 }
 
 function switchTheme(){
-    //going tonget access to all of the list of the classes 
+    //going to get access to all of the list of the classes 
     document.body.classList.toggle('is-light')
     document.body.classList.toggle('is-dark')
 }
