@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Cor de fundo suave */
+}
+
+main {
+    margin-bottom: 20px;
+    color: #333; /* Cor do texto */
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 70px); /* Cria uma grade com 3 colunas */
+    grid-template-rows: repeat(3, 70px); /* Cria uma grade com 3 linhas */
+    gap: 15px; /* Espaço entre os botões */
+}
+
+button {
+    width: 70px;
+    height: 70px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Cor de fundo para os botões */
+    color: white; /* Cor do texto nos botões */
+    border: none;
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s; /* Animação ao clicar */
+}
+
+button:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+input[type="text"] {
+    width: 200px;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#Comecar {
+    padding: 10px 30px; /* Aumento do padding lateral para acomodar melhor o texto */
+    font-size: 18px;
+    background-color: #008CBA; /* Cor azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; /* Certifica que o botão é um bloco, centralizando mais facilmente */
+    margin: 20px auto; /* Centraliza o botão horizontalmente e adiciona espaço */
+    width: fit-content;
+}
+
+#Comecar:hover {
+    background-color: #005f7a; /* Cor mais escura ao passar o mouse */
+}
